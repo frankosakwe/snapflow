@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
+[![GitHub Stars](https://img.shields.io/github/stars/frankosakwe/snapflow?style=social)](https://github.com/frankosakwe/snapflow)
+[![GitHub Issues](https://img.shields.io/github/issues/frankosakwe/snapflow)](https://github.com/frankosakwe/snapflow/issues)
 
 SnapFlow is a high-performance database snapshot and restore tool designed for modern development workflows. Create instant database snapshots, switch between states effortlessly, and accelerate your development cycle.
 
@@ -240,8 +242,8 @@ SnapFlow builds upon database management concepts and is inspired by the need fo
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/quantumdb/snapflow/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/quantumdb/snapflow/discussions)
+- **Issues**: [GitHub Issues](https://github.com/frankosakwe/snapflow/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/frankosakwe/snapflow/discussions)
 - **Email**: support@quantumdb.dev
 
 ---
