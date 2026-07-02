@@ -6,5 +6,5 @@ Allows running SnapFlow as a module: python -m snapflow
 
 from snapflow.cli import main
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

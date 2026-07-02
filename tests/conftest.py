@@ -21,7 +21,7 @@ def temp_config_dir(tmp_path):
 def temp_database_url(tmp_path):
     """
     Create a temporary SQLite database URL for testing.
-    
+
     Returns:
         SQLite connection URL string
     """
@@ -33,18 +33,18 @@ def temp_database_url(tmp_path):
 def test_config(temp_config_dir, temp_database_url):
     """
     Create a test configuration dictionary.
-    
+
     Returns:
         Test configuration dictionary
     """
     return {
-        'project_name': 'test_project',
-        'tracked_databases': ['test_database'],
-        'url': temp_database_url,
-        'snapflow_url': temp_database_url,
-        'logging': 30,  # WARNING level
-        'migrate_from_old_version': False,
-        'config_version': '1.0.0',
+        "project_name": "test_project",
+        "tracked_databases": ["test_database"],
+        "url": temp_database_url,
+        "snapflow_url": temp_database_url,
+        "logging": 30,  # WARNING level
+        "migrate_from_old_version": False,
+        "config_version": "1.0.0",
     }
 
 
@@ -52,16 +52,16 @@ def test_config(temp_config_dir, temp_database_url):
 def config_file(temp_config_dir, test_config):
     """
     Create a temporary configuration file.
-    
+
     Returns:
         Path to the configuration file
     """
     import yaml
-    
-    config_path = temp_config_dir / 'snapflow.yaml'
-    with open(config_path, 'w') as f:
+
+    config_path = temp_config_dir / "snapflow.yaml"
+    with open(config_path, "w") as f:
         yaml.dump(test_config, f)
-    
+
     return config_path
 
 
@@ -69,12 +69,12 @@ def config_file(temp_config_dir, test_config):
 def mock_connection():
     """Create a mock database connection for testing."""
     from unittest.mock import Mock, MagicMock
-    
+
     conn = Mock()
     conn.engine = Mock()
     conn.engine.dialect = Mock()
-    conn.engine.dialect.name = 'postgresql'
-    conn.engine.url = 'postgresql://localhost:5432/'
+    conn.engine.dialect.name = "postgresql"
+    conn.engine.url = "postgresql://localhost:5432/"
     conn.execute = MagicMock()
-    
+
     return conn
