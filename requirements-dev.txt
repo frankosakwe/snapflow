@@ -31,5 +31,5 @@ wheel>=0.40.0
 
 # Development Tools
 pip-tools>=7.0.0
-pre-commit>=3.0.0
+pre-commit>=4.6.0
 tox>=4.0.0
