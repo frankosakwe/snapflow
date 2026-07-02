@@ -8,6 +8,7 @@ import logging
 import re
 from typing import List
 
+import sqlalchemy as sa
 import sqlalchemy_utils
 from sqlalchemy.engine import Connection
 
@@ -333,7 +334,3 @@ def get_database_size(connection: Connection, database_name: str) -> int:
     except Exception as e:
         logger.warning(f"Could not get database size: {e}")
         return 0
-
-
-# Import sqlalchemy for text() function
-import sqlalchemy as sa

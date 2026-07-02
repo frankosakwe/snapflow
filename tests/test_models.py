@@ -4,10 +4,11 @@ Tests for SnapFlow Database Models
 Tests the Snapshot and DatabaseTable models.
 """
 
-import pytest
 from datetime import datetime, timedelta
 
-from snapflow.models import Snapshot, DatabaseTable, generate_unique_hash
+import pytest
+
+from snapflow.models import DatabaseTable, Snapshot, generate_unique_hash
 
 
 class TestGenerateUniqueHash:

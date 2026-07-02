@@ -4,13 +4,14 @@ SnapFlow Configuration Management
 Handles loading, validating, and saving configuration files.
 """
 
-import os
 import logging
+import os
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Any, Dict, Optional
 
 import yaml
-from schema import Schema, Use, Optional as SchemaOptional, SchemaError
+from schema import Optional as SchemaOptional
+from schema import Schema, SchemaError, Use
 
 from snapflow.exceptions import InvalidConfigError, MissingConfigError
 

@@ -4,11 +4,7 @@ Pytest Configuration and Fixtures
 Shared test fixtures and configuration for the test suite.
 """
 
-import tempfile
 import pytest
-from pathlib import Path
-
-from snapflow.config import create_default_config
 
 
 @pytest.fixture
@@ -68,7 +64,7 @@ def config_file(temp_config_dir, test_config):
 @pytest.fixture
 def mock_connection():
     """Create a mock database connection for testing."""
-    from unittest.mock import Mock, MagicMock
+    from unittest.mock import MagicMock, Mock
 
     conn = Mock()
     conn.engine = Mock()

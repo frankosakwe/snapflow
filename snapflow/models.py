@@ -7,7 +7,6 @@ SQLAlchemy models for storing snapshot metadata.
 import hashlib
 import uuid
 from datetime import datetime
-from typing import Optional
 
 import sqlalchemy as sa
 from sqlalchemy.ext.declarative import declarative_base

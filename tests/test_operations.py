@@ -4,17 +4,16 @@ Tests for SnapFlow Database Operations
 Tests low-level database operations.
 """
 
+from unittest.mock import Mock, patch
+
 import pytest
-from unittest.mock import Mock, patch, MagicMock
-import sqlalchemy as sa
 
 from snapflow.operations import (
-    get_database_url,
-    get_postgresql_version,
-    get_pid_column_name,
     SUPPORTED_DIALECTS,
+    get_database_url,
+    get_pid_column_name,
+    get_postgresql_version,
 )
-from snapflow.exceptions import DatabaseNotSupportedError
 
 
 class TestGetDatabaseUrl:

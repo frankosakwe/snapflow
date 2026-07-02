@@ -14,14 +14,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.exc import OperationalError
 
 from snapflow.app import SnapFlow, __version__
-from snapflow.config import load_config, save_config, create_default_config
-from snapflow.operations import database_exists, list_databases, SUPPORTED_DIALECTS
+from snapflow.config import create_default_config
 from snapflow.exceptions import (
-    MissingConfigError,
     InvalidConfigError,
-    SnapshotNotFoundError,
+    MissingConfigError,
     SnapshotAlreadyExistsError,
 )
+from snapflow.operations import SUPPORTED_DIALECTS, database_exists, list_databases
 
 
 def get_app() -> SnapFlow:
@@ -379,7 +378,7 @@ def init():
         url = url + "template1" if not url.endswith("template1") else url
 
     # Create configuration
-    config = create_default_config(
+    create_default_config(
         project_name=project_name, url=url, database_name=db_name, output_path="snapflow.yaml"
     )
 

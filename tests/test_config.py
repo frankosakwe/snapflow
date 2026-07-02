@@ -6,17 +6,16 @@ Tests configuration loading, saving, and validation.
 
 import pytest
 import yaml
-from pathlib import Path
 
 from snapflow.config import (
-    find_config_file,
-    load_config,
-    save_config,
     create_default_config,
+    find_config_file,
     get_database_url,
     get_snapflow_url,
+    load_config,
+    save_config,
 )
-from snapflow.exceptions import MissingConfigError, InvalidConfigError
+from snapflow.exceptions import InvalidConfigError, MissingConfigError
 
 
 class TestFindConfigFile:
@@ -175,7 +174,7 @@ class TestCreateDefaultConfig:
         """Should save config to file when output_path provided."""
         output_path = temp_config_dir / "snapflow.yaml"
 
-        config = create_default_config(
+        create_default_config(
             project_name="myproject",
             url="postgresql://localhost:5432/",
             database_name="mydb",
