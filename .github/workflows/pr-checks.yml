@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Label PR by size
       uses: codelytv/pr-size-labeler@v1
@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Check for merge conflicts
       uses: mschilde/auto-label-merge-conflicts@master
@@ -86,7 +86,7 @@ jobs:
       docs: ${{ steps.filter.outputs.docs }}
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - uses: dorny/paths-filter@v3
       id: filter
@@ -107,7 +107,7 @@ jobs:
     if: needs.changes.outputs.python == 'true' || needs.changes.outputs.tests == 'true'
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -132,7 +132,7 @@ jobs:
     if: always()
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     
     - name: Set up Python
       uses: actions/setup-python@v5
