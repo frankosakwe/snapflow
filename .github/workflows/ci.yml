@@ -109,15 +109,30 @@ jobs:
         python-version: ${{ matrix.python-version }}
         cache: 'pip'
     
+    - name: Display Python and pip info
+      run: |
+        python --version
+        python -m pip --version
+        python -m pip list
+      shell: bash
+    
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        python -m pip install -r requirements-dev.txt
-        python -m pip install -e .
+        echo "Installing pip..."
+        python -m pip install --upgrade pip || exit 1
+        echo "Installing requirements-dev.txt..."
+        python -m pip install -r requirements-dev.txt || exit 1
+        echo "Installing package in editable mode..."
+        python -m pip install -e . || exit 1
+        echo "Installation complete!"
+      shell: bash
     
     - name: Verify pytest installation
       run: |
+        echo "Verifying pytest installation..."
+        python -m pip show pytest
         python -c "import pytest; print(f'pytest version: {pytest.__version__}')"
+      shell: bash
     
     - name: Run tests with pytest
       run: |
