@@ -6,6 +6,7 @@ pytest>=7.0.0
 pytest-cov>=4.0.0
 pytest-mock>=3.10.0
 pytest-timeout>=2.1.0
+pytest-xdist>=3.0.0
 
 # Code Quality
 black>=23.0.0
@@ -14,6 +15,21 @@ mypy>=1.0.0
 isort>=5.12.0
 pylint>=2.17.0
 
+# Security
+bandit>=1.7.5
+safety>=2.3.0
+
 # Documentation
 sphinx>=6.0.0
 sphinx-rtd-theme>=1.2.0
+readme-renderer>=40.0
+
+# Build Tools
+build>=0.10.0
+twine>=4.0.0
+wheel>=0.40.0
+
+# Development Tools
+pip-tools>=7.0.0
+pre-commit>=3.0.0
+tox>=4.0.0

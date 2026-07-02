@@ -4,6 +4,8 @@
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![GitHub Stars](https://img.shields.io/github/stars/frankosakwe/snapflow?style=social)](https://github.com/frankosakwe/snapflow)
 [![GitHub Issues](https://img.shields.io/github/issues/frankosakwe/snapflow)](https://github.com/frankosakwe/snapflow/issues)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
 SnapFlow is a high-performance database snapshot and restore tool designed for modern development workflows. Create instant database snapshots, switch between states effortlessly, and accelerate your development cycle.
 
