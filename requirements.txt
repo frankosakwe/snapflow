@@ -4,7 +4,7 @@ SQLAlchemy>=1.4.0,<3.0.0
 humanize>=4.0.0
 schema>=0.7.5
 click>=8.0.0
-SQLAlchemy-Utils>=0.38.0
+SQLAlchemy-Utils>=0.42.1
 psutil>=5.9.0
 
 # Database Drivers (optional - install via extras)
