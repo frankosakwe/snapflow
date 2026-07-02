@@ -22,7 +22,7 @@ safety>=2.3.0
 # Documentation
 sphinx>=6.0.0
 sphinx-rtd-theme>=1.2.0
-readme-renderer>=40.0
+readme-renderer[md]>=40.0
 
 # Build Tools
 build>=0.10.0
