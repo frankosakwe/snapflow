@@ -1,5 +1,7 @@
 # SnapFlow - Lightning-Fast Database Snapshot Manager
 
+[![CI/CD](https://github.com/frankosakwe/snapflow/actions/workflows/ci.yml/badge.svg)](https://github.com/frankosakwe/snapflow/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/frankosakwe/snapflow/actions/workflows/codeql.yml/badge.svg)](https://github.com/frankosakwe/snapflow/actions/workflows/codeql.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![GitHub Stars](https://img.shields.io/github/stars/frankosakwe/snapflow?style=social)](https://github.com/frankosakwe/snapflow)
