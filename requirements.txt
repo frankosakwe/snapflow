@@ -1,0 +1,12 @@
+# Core Dependencies
+PyYAML>=6.0
+SQLAlchemy>=1.4.0,<3.0.0
+humanize>=4.0.0
+schema>=0.7.5
+click>=8.0.0
+SQLAlchemy-Utils>=0.38.0
+psutil>=5.9.0
+
+# Database Drivers (optional)
+psycopg2-binary>=2.9.0
+PyMySQL>=1.0.0

@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include requirements.txt
+include requirements-dev.txt
+recursive-include snapflow *.py
+recursive-exclude tests *
+recursive-exclude docs *
+global-exclude __pycache__
+global-exclude *.py[cod]
