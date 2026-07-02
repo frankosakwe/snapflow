@@ -152,6 +152,7 @@ jobs:
     - name: Run tests with pytest
       run: |
         python -m pytest -v --cov=snapflow --cov-report=xml --cov-report=term-missing --cov-report=html
+      shell: bash
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
