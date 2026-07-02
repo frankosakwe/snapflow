@@ -123,7 +123,7 @@ jobs:
     
     - name: Run quick tests
       run: |
-        pytest tests/ -v --maxfail=3
+        python -m pytest tests/ -v --maxfail=3
 
   comment-coverage:
     name: Comment Test Coverage
@@ -147,7 +147,7 @@ jobs:
     
     - name: Run tests with coverage
       run: |
-        pytest --cov=snapflow --cov-report=term --cov-report=html
+        python -m pytest --cov=snapflow --cov-report=term --cov-report=html
     
     - name: Comment coverage
       uses: py-cov-action/python-coverage-comment-action@v3
