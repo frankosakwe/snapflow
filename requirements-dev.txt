@@ -27,7 +27,7 @@ readme-renderer>=40.0
 # Build Tools
 build>=0.10.0
 twine>=4.0.0
-wheel>=0.40.0
+wheel>=0.47.0
 
 # Development Tools
 pip-tools>=7.0.0
