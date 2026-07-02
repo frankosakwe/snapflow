@@ -112,8 +112,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements-dev.txt
-        pip install -e .
+        python -m pip install -r requirements-dev.txt
+        python -m pip install -e .
+    
+    - name: Verify pytest installation
+      run: |
+        python -c "import pytest; print(f'pytest version: {pytest.__version__}')"
     
     - name: Run tests with pytest
       run: |
