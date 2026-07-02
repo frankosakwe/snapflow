@@ -127,6 +127,21 @@ jobs:
         echo "Installation complete!"
       shell: bash
     
+    - name: Install database drivers (Unix)
+      if: runner.os != 'Windows'
+      run: |
+        echo "Installing database drivers for Unix..."
+        python -m pip install psycopg2-binary>=2.9.0 PyMySQL>=1.0.0
+      shell: bash
+    
+    - name: Install database drivers (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        echo "Installing database drivers for Windows..."
+        python -m pip install PyMySQL>=1.0.0
+        echo "Skipping psycopg2-binary on Windows (not needed for tests)"
+      shell: bash
+    
     - name: Verify pytest installation
       run: |
         echo "Verifying pytest installation..."
