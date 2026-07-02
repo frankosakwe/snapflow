@@ -5,7 +5,7 @@ User-friendly CLI for managing database snapshots.
 """
 
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from time import sleep
 
 import click
@@ -109,7 +109,11 @@ def list():
         click.echo(f"\n📸 Snapshots for project '{app.config['project_name']}':\n")
 
         for snap in snapshots:
-            age = humanize.naturaltime(datetime.utcnow() - snap.created_at)
+            # Handle both timezone-aware and naive datetimes
+            created = snap.created_at
+            if created.tzinfo is None:
+                created = created.replace(tzinfo=timezone.utc)
+            age = humanize.naturaltime(datetime.now(timezone.utc) - created)
             status = "✓" if snap.is_ready else "⏳"
 
             click.echo(f"  {status} {snap.snapshot_name}")

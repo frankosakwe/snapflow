@@ -6,13 +6,16 @@ SQLAlchemy models for storing snapshot metadata.
 
 import hashlib
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 import sqlalchemy as sa
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import DeclarativeBase, relationship
 
-Base = declarative_base()
+
+class Base(DeclarativeBase):
+    """Base class for all models."""
+
+    pass
 
 
 def generate_unique_hash() -> str:
@@ -56,7 +59,7 @@ class Snapshot(Base):
     )
     created_at = sa.Column(
         sa.DateTime,
-        default=datetime.utcnow,
+        default=lambda: datetime.now(timezone.utc),
         nullable=False,
         doc="Timestamp when snapshot was created",
     )
@@ -72,6 +75,14 @@ class Snapshot(Base):
         cascade="all, delete-orphan",
         doc="Database tables included in this snapshot",
     )
+
+    def __init__(self, **kwargs):
+        """Initialize Snapshot with automatic hash generation."""
+        if "hash" not in kwargs:
+            kwargs["hash"] = generate_unique_hash()
+        if "created_at" not in kwargs:
+            kwargs["created_at"] = datetime.now(timezone.utc)
+        super().__init__(**kwargs)
 
     @property
     def is_ready(self) -> bool:
@@ -91,7 +102,12 @@ class Snapshot(Base):
         Returns:
             Number of seconds since snapshot was created
         """
-        return (datetime.utcnow() - self.created_at).total_seconds()
+        now = datetime.now(timezone.utc)
+        # Handle both timezone-aware and naive datetimes
+        created = self.created_at
+        if created.tzinfo is None:
+            created = created.replace(tzinfo=timezone.utc)
+        return (now - created).total_seconds()
 
     def __repr__(self) -> str:
         return (
@@ -125,7 +141,10 @@ class DatabaseTable(Base):
         doc="Foreign key to parent snapshot",
     )
     created_at = sa.Column(
-        sa.DateTime, default=datetime.utcnow, nullable=False, doc="Timestamp when table was added"
+        sa.DateTime,
+        default=lambda: datetime.now(timezone.utc),
+        nullable=False,
+        doc="Timestamp when table was added",
     )
     size_bytes = sa.Column(
         sa.BigInteger, nullable=True, doc="Estimated size of the database in bytes"

@@ -73,7 +73,9 @@ class TestSnapshot:
 
     def test_age_property(self):
         """Age property returns seconds since creation."""
-        past_time = datetime.utcnow() - timedelta(seconds=100)
+        from datetime import timezone
+
+        past_time = datetime.now(timezone.utc) - timedelta(seconds=100)
         snapshot = Snapshot(snapshot_name="test", project_name="test_project", created_at=past_time)
 
         age = snapshot.age
@@ -82,11 +84,13 @@ class TestSnapshot:
 
     def test_snapshot_repr(self):
         """Snapshot has useful repr."""
+        from datetime import timezone
+
         snapshot = Snapshot(
             id=1,
             snapshot_name="test_snapshot",
             project_name="test_project",
-            created_at=datetime.utcnow(),
+            created_at=datetime.now(timezone.utc),
         )
 
         repr_str = repr(snapshot)
