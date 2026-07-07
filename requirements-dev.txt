@@ -30,6 +30,6 @@ twine>=4.0.0
 wheel>=0.40.0
 
 # Development Tools
-pip-tools>=7.0.0
+pip-tools>=7.5.3
 pre-commit>=3.0.0
 tox>=4.0.0
