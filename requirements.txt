@@ -1,5 +1,5 @@
 # Core Dependencies
-PyYAML>=6.0
+PyYAML>=6.0.3
 SQLAlchemy>=1.4.0,<3.0.0
 humanize>=4.0.0
 schema>=0.7.5
